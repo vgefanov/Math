@@ -26,7 +26,7 @@ double test_pack_acos[] = {
     -9999999999, 9999999999, -S21_INFINITY, -S21_INFINITY, S21_NAN, TOLERANCE, -TOLERANCE};
 
 START_TEST(test_acos) {
-    if isnan (acos(test_pack_acos[_i])) {
+    if (isnan(acos(test_pack_acos[_i]))) {
         ck_assert_ldouble_nan(s21_acos(test_pack_acos[_i]));
     } else {
         ck_assert_ldouble_eq_tol(s21_acos(test_pack_acos[_i]), acos(test_pack_acos[_i]), TOLERANCE);
@@ -42,7 +42,7 @@ double test_pack_asin[] = {
     -9999999999, 9999999999, -S21_INFINITY, -S21_INFINITY, S21_NAN, TOLERANCE, -TOLERANCE};
 
 START_TEST(test_asin) {
-    if isnan (asin(test_pack_asin[_i])) {
+    if (isnan(asin(test_pack_asin[_i]))) {
         ck_assert_ldouble_nan(s21_asin(test_pack_asin[_i]));
     } else {
         ck_assert_ldouble_eq_tol(s21_asin(test_pack_asin[_i]), asin(test_pack_asin[_i]), TOLERANCE);
@@ -58,7 +58,7 @@ double test_pack_atan[] = {
     -9999999999, 9999999999, -S21_INFINITY, -S21_INFINITY, S21_NAN, TOLERANCE, -TOLERANCE};
 
 START_TEST(test_atan) {
-    if isnan (atan(test_pack_atan[_i])) {
+    if (isnan(atan(test_pack_atan[_i]))) {
         ck_assert_ldouble_nan(s21_atan(test_pack_atan[_i]));
     } else {
         ck_assert_ldouble_eq_tol(s21_atan(test_pack_atan[_i]), atan(test_pack_atan[_i]), TOLERANCE);
@@ -89,7 +89,7 @@ double test_pack_ceil[] = {0.,
                            -S21_INFINITY};
 
 START_TEST(test_ceil) {
-    if isnan (ceil(test_pack_ceil[_i])) {
+    if (isnan(ceil(test_pack_ceil[_i]))) {
         ck_assert_ldouble_nan(s21_ceil(test_pack_ceil[_i]));
     } else {
         ck_assert_ldouble_eq(s21_ceil(test_pack_ceil[_i]), ceil(test_pack_ceil[_i]));
@@ -116,7 +116,7 @@ double test_pack_cos[] = {0.,
                           -TOLERANCE};
 
 START_TEST(test_cos) {
-    if isnan (cos(test_pack_cos[_i])) {
+    if (isnan(cos(test_pack_cos[_i]))) {
         ck_assert_ldouble_nan(s21_cos(test_pack_cos[_i]));
     } else {
         ck_assert_double_eq_tol(s21_cos(test_pack_cos[_i]), cos(test_pack_cos[_i]), TOLERANCE);
@@ -146,9 +146,9 @@ double test_pack_exp[] = {0,
                           -S21_INFINITY};
 
 START_TEST(test_exp) {
-    if isnan (exp(test_pack_exp[_i])) {
+    if (isnan(exp(test_pack_exp[_i]))) {
         ck_assert_ldouble_nan(s21_exp(test_pack_exp[_i]));
-    } else if isinf (exp(test_pack_exp[_i])) {
+    } else if (isinf(exp(test_pack_exp[_i]))) {
         ck_assert_ldouble_infinite(s21_exp(test_pack_exp[_i]));
     } else {
         ck_assert_double_eq_tol(s21_exp(test_pack_exp[_i]), exp(test_pack_exp[_i]), TOLERANCE);
@@ -196,7 +196,7 @@ double test_pack_floor[] = {0.,
                             -S21_INFINITY};
 
 START_TEST(test_floor) {
-    if isnan (floor(test_pack_floor[_i])) {
+    if (isnan(floor(test_pack_floor[_i]))) {
         ck_assert_ldouble_nan(s21_floor(test_pack_floor[_i]));
     } else {
         ck_assert_double_eq(s21_floor(test_pack_ceil[_i]), floor(test_pack_ceil[_i]));
@@ -232,7 +232,7 @@ test_struct_dd test_pack_fmod[] = {
 };
 
 START_TEST(test_fmod) {
-    if isnan (fmod(test_pack_fmod[_i].op1, test_pack_fmod[_i].op2)) {
+    if (isnan(fmod(test_pack_fmod[_i].op1, test_pack_fmod[_i].op2))) {
         ck_assert_ldouble_nan(s21_fmod(test_pack_fmod[_i].op1, test_pack_fmod[_i].op2));
     } else {
         ck_assert_double_eq_tol(s21_fmod(test_pack_fmod[_i].op1, test_pack_fmod[_i].op2),
@@ -247,7 +247,7 @@ double test_pack_log[] = {-0.1, 0, 1.1e-80, 1.1e-11,          9.234578353457e-6,
                           2.5,  3, 10,      9.234578353457e6, S21_INFINITY,      -S21_INFINITY, S21_NAN};
 
 START_TEST(test_log) {
-    if isnan (log(test_pack_log[_i])) {
+    if (isnan(log(test_pack_log[_i]))) {
         ck_assert_ldouble_nan(s21_log(test_pack_log[_i]));
     } else if (isinf(log(test_pack_log[_i]))) {
         ck_assert_ldouble_infinite(s21_log(test_pack_log[_i]));
@@ -327,7 +327,7 @@ test_struct_dd test_pack_pow[] = {
 };
 
 START_TEST(test_pow) {
-    if isnan (pow(test_pack_pow[_i].op1, test_pack_pow[_i].op2)) {
+    if (isnan(pow(test_pack_pow[_i].op1, test_pack_pow[_i].op2))) {
         ck_assert_ldouble_nan(s21_pow(test_pack_pow[_i].op1, test_pack_pow[_i].op2));
     } else if (isinf(pow(test_pack_pow[_i].op1, test_pack_pow[_i].op2))) {
         ck_assert_ldouble_infinite(s21_pow(test_pack_pow[_i].op1, test_pack_pow[_i].op2));
@@ -344,7 +344,7 @@ double test_pack_sin[] = {0.,  -0.,          0.5,           -0.5,    1,         
                           -10, S21_INFINITY, -S21_INFINITY, S21_NAN, TOLERANCE, -TOLERANCE};
 
 START_TEST(test_sin) {
-    if isnan (sin(test_pack_sin[_i])) {
+    if (isnan(sin(test_pack_sin[_i]))) {
         ck_assert_ldouble_nan(s21_sin(test_pack_sin[_i]));
     } else {
         ck_assert_double_eq_tol(s21_sin(test_pack_sin[_i]), sin(test_pack_sin[_i]), TOLERANCE);
@@ -360,7 +360,7 @@ double test_pack_sqrt[] = {
 };
 
 START_TEST(test_sqrt) {
-    if isnan (sqrt(test_pack_sqrt[_i])) {
+    if (isnan(sqrt(test_pack_sqrt[_i]))) {
         ck_assert_ldouble_nan(s21_sqrt(test_pack_sqrt[_i]));
     } else if (isinf(sqrt(test_pack_sqrt[_i]))) {
         ck_assert_ldouble_infinite(s21_sqrt(test_pack_sqrt[_i]));
@@ -376,7 +376,7 @@ double test_pack_tan[] = {0.,  -0.,          0.5,           -0.5,    1,         
                           -10, S21_INFINITY, -S21_INFINITY, S21_NAN, TOLERANCE, -TOLERANCE};
 
 START_TEST(test_tan) {
-    if isnan (tan(test_pack_tan[_i])) {
+    if (isnan(tan(test_pack_tan[_i]))) {
         ck_assert_ldouble_nan(s21_tan(test_pack_tan[_i]));
     } else {
         ck_assert_double_eq_tol(s21_tan(test_pack_tan[_i]), tan(test_pack_tan[_i]), TOLERANCE);

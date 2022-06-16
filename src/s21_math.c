@@ -30,7 +30,7 @@ long double ceil_or_floor(double x, bool is_ceil) {
         } else {
             result.dbl = truncation - (truncation > x);
         }
-        result.bits[8] = result.bits[8] | sign;
+        result.bits[7] = result.bits[7] | sign;
     }
     return result.dbl;
 }
@@ -43,16 +43,16 @@ long double ceil_or_floor(double x, bool is_ceil) {
  * @return double
  */
 double s21_log2(double x) {
-	double s = 0.0;
-	double a = 0.5;
-	for(int i = 0; i < LOG2_LIMIT; i++) {
-		x = x * x;
-		if (x > 2) {
-			x = x / 2;
-			s += a;
-		}
-		a *=  0.5;
-	}
+    double s = 0.0;
+    double a = 0.5;
+    for (int i = 0; i < LOG2_LIMIT; i++) {
+        x = x * x;
+        if (x > 2) {
+            x = x / 2;
+            s += a;
+        }
+        a *=  0.5;
+    }
     return s;
 }
 
@@ -302,43 +302,6 @@ long double s21_pow(double base, double exp) {
 }
 
 
-// long double s21_pow(double base, double exp) {
-//     long double result;
-//     if (exp == 0) {
-//         result = 1;
-//     } else if (exp == S21_INFINITY) {
-//         if (base > 1) {
-//             result = S21_INFINITY;
-//         }
-//         if (base < 1 && base > -1) {
-//             result = 0;
-//         }
-//         if (base < -1) {
-//             result  = -S21_INFINITY;
-//         }
-//     } else if (exp == -S21_INFINITY) {
-//         result = 0;
-//         if (base != base) {
-//             result = S21_NAN;
-//         }
-//         else if (base > -1 && base < 1) {
-//             result = -S21_INFINITY;
-//         }
-//     } else if (base < 0 && exp != s21_ceil(exp)) {
-//         result = S21_NAN;
-//     } else {
-//         int reverse = 1;
-//         if (base < 0) {
-//             base = -base;
-//             reverse = -1;
-//         }
-//         result = reverse * s21_exp(exp * s21_log(base));
-
-//     }
-//     return result;
-// }
-
-
 // s21_sin
 
 long double s21_sin(double x) {
@@ -349,7 +312,8 @@ long double s21_sin(double x) {
 // s21_sqrt
 
 long double s21_sqrt(double x) {
-    long double result = 0.0 / 0.0;
+    long double result = .0;
+    result /= .0;
     if (x == S21_INFINITY) {
         result = 1.0 / 0.0;
     } else if (x >= 0) {

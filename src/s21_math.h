@@ -1,3 +1,6 @@
+#ifndef SRC_S21_MATH_H_
+#define SRC_S21_MATH_H_
+
 long double exp_intgr(int x);
 
 #define TOLERANCE 1e-6
@@ -143,3 +146,5 @@ long double s21_sqrt(double x);
  * @return long double
  */
 long double s21_tan(double x);
+
+#endif  // SRC_S21_MATH_H_
